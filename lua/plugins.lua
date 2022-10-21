@@ -7,47 +7,38 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
+local plugins = {
+	'wbthomason/packer.nvim',														-- Package Manager
+	'nvim-lua/plenary.nvim',  														-- Dependency?	
+	'neovim/nvim-lspconfig',  														--	
+	'williamboman/mason.nvim', 														-- Cool lsp download gui
+	'glepnir/lspsaga.nvim',															--	
+	{ 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' }},-- Additional textobjects for treesitter
+	'tpope/vim-fugitive',															-- Support for :Git commands
+	{'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}},  		-- File tree
+	'nvim-treesitter/nvim-treesitter',                                              -- Highlight, edit, and navigate code
+	'folke/tokyonight.nvim',														-- Tokyo night theme
+	'mjlbach/onedark.nvim', 														-- Theme inspired by Atom
+	'shaunsingh/nord.nvim', 														-- Cool nordic theme
+	'projekt0n/github-nvim-theme', 													-- Github themes
+	{'nvim-lualine/lualine.nvim', 													--
+	requires = { 'kyazdani42/nvim-web-devicons', opt = true }}, 					-- Cool status line bar
+	{ 'goolord/alpha-nvim', requires = { 'kyazdani42/nvim-web-devicons' }},			-- startup screen
+	{ 'nvim-telescope/telescope.nvim', branch = '0.1.x', 							-- Fuzzy finder
+		requires = { 'nvim-lua/plenary.nvim' } },
+	{ 'nvim-telescope/telescope-fzf-native.nvim', 
+		run = 'make', cond = vim.fn.executable "make" == 1 },-- Dart/Flutter Plugins
+	'dart-lang/dart-vim-plugin',
+	{'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'},
+	{'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}},
+  	'natebosch/vim-lsc',
+  	'natebosch/vim-lsc-dart',
+}
+
 require('packer').startup(function(use)
----																							.
----																						--	├── General Plugins	
-	use 'wbthomason/packer.nvim'  														--	│	├── Package Manager
-	use 'nvim-lua/plenary.nvim'  														--	│	├──
-	use 'neovim/nvim-lspconfig'  														--	│	├──
-	use 'williamboman/mason.nvim'  														--	│	├── Cool lsp download ui
-	use 'glepnir/lspsaga.nvim'  														--	│	├──	
-	use {'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}}  			--	│	├──	Tabs for files
-	use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' }} --	│	├── Additional textobjects for treesitter
-	use 'tpope/vim-fugitive'															--	│	├── Support for :Git commands
----																							│	└──	High Config	
-	use {'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}}  		--	│			├──	File tree
-	use 'nvim-treesitter/nvim-treesitter'                                              	--	│ 			└── Highlight, edit, and navigate code
----																							├── Visual 
----	 																						│	├──Theme
-	use {'folke/tokyonight.nvim', as = 'tokyo'}											--	│	│	├──	Tokyo night theme
-	use 'mjlbach/onedark.nvim' 															--	│	│	├──	Theme inspired by Atom
-	use 'shaunsingh/nord.nvim' 															--	│	│	├──	Cool nordic theme
-	use 'projekt0n/github-nvim-theme' 													--	│	│	└── Github themes
----		 																				--	│	├──Informational
-	use {'nvim-lualine/lualine.nvim', 													--	│	│	│
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }} 						--	│	│	└── Cool status line bar
-	use { 'goolord/alpha-nvim', requires = { 'kyazdani42/nvim-web-devicons' }}			--	│	startup screen
-	-- Fuzzy Finder (files, lsp, etc)
-	use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', 
-		requires = { 'nvim-lua/plenary.nvim' } }
-
-	-- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-	use { 'nvim-telescope/telescope-fzf-native.nvim', 
-		run = 'make', cond = vim.fn.executable "make" == 1 }-- Dart/Flutter Plugins
-
-	--- Syntax highlight for Dart
-	use 'dart-lang/dart-vim-plugin'
-
-	--- Flutter Tools
-	use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
-
-	--- Vim language servers
-  	use 'natebosch/vim-lsc'
-  	use 'natebosch/vim-lsc-dart'
+	for _, plugin in ipairs(plugins) do
+		use(plugin)
+  	end																							
 end)
 
 --- Non-beefy plugins 

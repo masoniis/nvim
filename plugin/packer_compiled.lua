@@ -144,7 +144,7 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/mason/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
     loaded = true,
@@ -174,9 +174,9 @@ _G.packer_plugins = {
     path = "/Users/mason/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  tokyo = {
+  ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/tokyo",
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-fugitive"] = {
