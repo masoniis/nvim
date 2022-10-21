@@ -8,31 +8,49 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 local plugins = {
-	'wbthomason/packer.nvim',														-- Package Manager
-	'nvim-lua/plenary.nvim',  														-- Dependency?	
+	-- Package manager
+	'wbthomason/packer.nvim',														-- Plugin manager
+
+	-----------------------
+	-- Essential plugins --
+	-----------------------
 	'neovim/nvim-lspconfig',  														--	
-	'williamboman/mason.nvim', 														-- Cool lsp download gui
+	'nvim-lua/plenary.nvim',														--
 	'glepnir/lspsaga.nvim',															--	
-	{ 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' }},-- Additional textobjects for treesitter
-	'tpope/vim-fugitive',															-- Support for :Git commands
-	{'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}},  		-- File tree
+  	'natebosch/vim-lsc',															--
+  	'natebosch/vim-lsc-dart',														--
 	'nvim-treesitter/nvim-treesitter',                                              -- Highlight, edit, and navigate code
-	'folke/tokyonight.nvim',														-- Tokyo night theme
-	'mjlbach/onedark.nvim', 														-- Theme inspired by Atom
-	'shaunsingh/nord.nvim', 														-- Cool nordic theme
-	'projekt0n/github-nvim-theme', 													-- Github themes
-	{'nvim-lualine/lualine.nvim', 													--
-	requires = { 'kyazdani42/nvim-web-devicons', opt = true }}, 					-- Cool status line bar
-	{ 'goolord/alpha-nvim', requires = { 'kyazdani42/nvim-web-devicons' }},			-- startup screen
+	{'nvim-treesitter/nvim-treesitter-textobjects', after = {'nvim-treesitter'}},	-- Additional textobjects for treesitter
+
+	------------------------
+	-- Convenience plugins--
+	------------------------
+	'tpope/vim-fugitive',															-- Support for :Git commands
+	'williamboman/mason.nvim', 														-- Cool lsp download gui
+	{'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}},			-- Tabs for files
+	{'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}},  		-- File tree
 	{ 'nvim-telescope/telescope.nvim', branch = '0.1.x', 							-- Fuzzy finder
 		requires = { 'nvim-lua/plenary.nvim' } },
-	{ 'nvim-telescope/telescope-fzf-native.nvim', 
-		run = 'make', cond = vim.fn.executable "make" == 1 },-- Dart/Flutter Plugins
-	'dart-lang/dart-vim-plugin',
-	{'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'},
-	{'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}},
-  	'natebosch/vim-lsc',
-  	'natebosch/vim-lsc-dart',
+
+	-------------------------------
+	-- Language specific plugins --
+	-------------------------------
+	--- Dart/Flutter:
+	'dart-lang/dart-vim-plugin',													-- Dart LSP
+	{'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'},				-- Flutter support
+
+	-------------------
+	-- Visual plugins--
+	-------------------
+	--- Themes:
+	'mjlbach/onedark.nvim', 														-- Theme inspired by Atom
+	'shaunsingh/nord.nvim', 														-- Cool nordic theme
+	'folke/tokyonight.nvim',														-- Tokyo night theme
+	'projekt0n/github-nvim-theme', 													-- Github themes
+	--- Other:
+	{ 'goolord/alpha-nvim', requires = { 'kyazdani42/nvim-web-devicons' }},			-- Startup screen
+	{'nvim-lualine/lualine.nvim', 													-- Cool Status line bar	
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }},	
 }
 
 require('packer').startup(function(use)
@@ -40,11 +58,3 @@ require('packer').startup(function(use)
 		use(plugin)
   	end																							
 end)
-
---- Non-beefy plugins 
-local saga = require('lspsaga')
-saga.init_lsp_saga()
-require'bufferline'.setup()
-require("flutter-tools").setup{} -- use defaults
-require("mason").setup()
-require('lualine').setup()
