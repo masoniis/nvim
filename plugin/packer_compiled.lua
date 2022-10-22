@@ -185,6 +185,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/mason/.local/share/nvim/site/pack/packer/start/vim-lsc-dart",
     url = "https://github.com/natebosch/vim-lsc-dart"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

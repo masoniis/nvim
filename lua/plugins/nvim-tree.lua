@@ -6,6 +6,7 @@ require("nvim-tree").setup({
   sort_by = "case_sensitive",
   sync_root_with_cwd = true,
   open_on_setup = false,
+  respect_buf_cwd = true,
   view = {
     adaptive_size = true,
     mappings = {

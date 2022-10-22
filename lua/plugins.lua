@@ -22,15 +22,16 @@ local plugins = {
 	'nvim-treesitter/nvim-treesitter',                                              -- Highlight, edit, and navigate code
 	{'nvim-treesitter/nvim-treesitter-textobjects', after = {'nvim-treesitter'}},	-- Additional textobjects for treesitter
 
-	------------------------
-	-- Convenience plugins--
-	------------------------
+	-------------------------
+	-- Convenience plugins --
+	-------------------------
 	'tpope/vim-fugitive',															-- Support for :Git commands
 	'williamboman/mason.nvim', 														-- Cool lsp download gui
+	'folke/which-key.nvim',
 	{'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}},			-- Tabs for files
 	{'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}},  		-- File tree
-	{ 'nvim-telescope/telescope.nvim', branch = '0.1.x', 							-- Fuzzy finder
-		requires = { 'nvim-lua/plenary.nvim' } },
+	{'nvim-telescope/telescope.nvim', branch = '0.1.x', 							-- Fuzzy finder
+		requires = {'nvim-lua/plenary.nvim'}},
 
 	-------------------------------
 	-- Language specific plugins --
@@ -39,9 +40,9 @@ local plugins = {
 	'dart-lang/dart-vim-plugin',													-- Dart LSP
 	{'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'},				-- Flutter support
 
-	-------------------
-	-- Visual plugins--
-	-------------------
+	--------------------
+	-- Visual plugins --
+	--------------------
 	--- Themes:
 	'mjlbach/onedark.nvim', 														-- Theme inspired by Atom
 	'shaunsingh/nord.nvim', 														-- Cool nordic theme

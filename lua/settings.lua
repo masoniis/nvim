@@ -4,7 +4,7 @@ local o = vim.o
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd[[colorscheme nord]]
+vim.cmd[[colorscheme tokyonight]]
 -- vim.cmd[[colorscheme tokyonight-night]]
 
 --- Map leader to space

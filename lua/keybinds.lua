@@ -6,6 +6,9 @@ end
 map('n', 'j', 'gj')
 map('n', 'k', 'gk')
 
+-- Changing the working directory to the current file location
+map('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')
+
 -- All nvim-tree realted mappings --
 -- Full defaults here: https://raw.githubusercontent.com/kyazdani42/nvim-tree.lua/master/doc/nvim-tree-lua.txt
 map('n', '<C-t>', ':NvimTreeToggle<CR>')
