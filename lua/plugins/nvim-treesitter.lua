@@ -1,4 +1,10 @@
-require('nvim-treesitter.configs').setup {
+local status_ok, nvimtree = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+  vim.notify("Treesitter failed to initialize.")
+  return
+end
+
+nvimtree.setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'dart' },
 

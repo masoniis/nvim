@@ -1,32 +1,24 @@
--- See `:help vim.o`
-local g = vim.g
-local o = vim.o
+local options = {
+	termguicolors = true,
+	number = true,
+	numberwidth = 5,
+	cursorline = true,
+	clipboard = 'unnamedplus',					-- Neovim and OS clipboard are friends now
+	tabstop=4,							-- Tab length 4 spaces
+	shiftwidth=4,							-- 4 spaces when indenting with '>'
+	smartcase = true,
+	ignorecase = true,
+	scrolloff = 8, 							-- Keep cursor centered by 8 spaces vertically
+	sidescrolloff = 8,						-- Same as above but sides
+}
 
--- Set colorscheme
-vim.o.termguicolors = true
-vim.cmd[[colorscheme tokyonight]]
--- vim.cmd[[colorscheme tokyonight-night]]
+for option, value in pairs(options) do
+  vim.opt[option] = value
+end
 
---- Map leader to space
-g.mapleader = ' '
-g.maplocalleader = ' '
+local notify_status_ok, notify = pcall(require, "notify")
+if not notify_status_ok then
+  return
+end
 
-o.number = true
-o.numberwidth = 5
-o.cursorline = true
-
--- Makes neovim and host OS clipboard play nicely with each other
-o.clipboard = 'unnamedplus'
-
--- show existing tab with 4 spaces width
-o.tabstop=4
--- when indenting with '>', use 4 spaces width
-o.shiftwidth=4
-
--- Case insensitive searching UNLESS /C or capital in search
-o.ignorecase = true
-o.smartcase = true
-
--- Keep cursor centered
-o.scrolloff = 8 -- is one of my fav
-o.sidescrolloff = 8
+vim.notify = notify

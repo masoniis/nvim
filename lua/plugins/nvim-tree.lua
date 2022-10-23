@@ -1,8 +1,14 @@
+local status_ok, nvimtree = pcall(require, "nvim-tree")
+if not status_ok then
+  vim.notify("Nvim-tree failed to initialize.")
+  return
+end
+
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-require("nvim-tree").setup({
+nvimtree.setup({
   sort_by = "case_sensitive",
   sync_root_with_cwd = true,
   open_on_setup = false,

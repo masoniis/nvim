@@ -36,12 +36,12 @@ dashboard.section.header.val = header_chars()
 
 -- Set menu
 dashboard.section.buttons.val = {
-    dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
-    dashboard.button( "f", "  > Find file", ":cd ~/dev/ | Telescope find_files<CR>"),
-    dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
-	dashboard.button( "b", "  > Bookmarks", ":Telescope marks<CR>"),
-	dashboard.button( "t", "  > Themes", ":Telescope colorscheme<CR>"),
-    dashboard.button( "s", "  > Settings" , ":e ~/.config/nvim/lua/settings.lua<CR>"),
+    dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
+    dashboard.button( "f", "  > Find file", ":cd ~/dev/ | Telescope find_files<CR>"),
+    dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
+	dashboard.button( "b", "  > Bookmarks", ":Telescope marks<CR>"),
+	dashboard.button( "t", "嗀 > Themes"   , ":Telescope colorscheme<CR>"),
+    dashboard.button( "s", "  > Settings" , ":e ~/.config/nvim/lua/settings.lua<CR>"),
     dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
 }
 
