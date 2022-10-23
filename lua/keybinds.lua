@@ -2,9 +2,10 @@ local function map(m, k, v)
   vim.keymap.set(m, k, v, { silent = true })
 end
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-map('n', '<Space>', '<Nop>')
+
+map("", "<Space>", "<Nop>")
+vim.g.mapleader = " "												-- Leader to space
+vim.g.maplocalleader= " "											-- II
 
 -- Modes
 --   normal_mode = "n",
@@ -14,32 +15,44 @@ map('n', '<Space>', '<Nop>')
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Move through visual lines rather than logical lines
-map('n', 'j', 'gj')
-map('n', 'k', 'gk')
+-----------------
+-- Normal Mode --
+-----------------
+map('n', 'j', 'gj')											-- Move through visual lines instead of logical lines
+map('n', 'k', 'gk')											-- II
 
--- Resize with arrows
-map("n", "<C-Up>", ":resize +2<CR>")
-map("n", "<C-Down>", ":resize -2<CR>")
-map("n", "<C-Left>", ":vertical resize -2<CR>")
-map("n", "<C-Right>", ":vertical resize +2<CR>")
+map('n', '<C-k>', ':wincmd k<CR>')							-- Window navigation
+map('n', '<C-j>', ':wincmd j<CR>')							-- II
+map('n', '<C-h>', ':wincmd h<CR>')							-- II
+map('n', '<C-l>', ':wincmd l<CR>')							-- II
 
--- Move text up and down
-map("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
-map("n", "<A-k>", "<Esc>:m .-2<CR>==gi")
-map("v", "<A-j>", ":m .+1<CR>==")
-map("v", "<A-k>", ":m .-2<CR>==")
-map("v", "p", '"_dP')
+map("n", "<C-Up>", ":resize +2<CR>")						-- Resize with arrows
+map("n", "<C-Down>", ":resize -2<CR>")						-- II
+map("n", "<C-Left>", ":vertical resize -2<CR>")				-- II
+map("n", "<C-Right>", ":vertical resize +2<CR>")			-- II
 
-map('n', '<leader>A', ':Alpha')
-map('n', '<leader>a', ':Alpha')
+local builtin = require('telescope.builtin')
+map('n', 'ff', builtin.find_files, {})						-- Telescope find files
+map('n', 'fg', builtin.live_grep, {})						-- Telescope live grep
+map('n', 'fb', builtin.buffers, {})							-- Telescope buffers
+map('n', 'fh', builtin.help_tags, {})						-- Telescope help tags
+
+map("n", "<A-j>", "<Esc>:m .+1<CR>==gi")					-- Move text up
+map("n", "<A-k>", "<Esc>:m .-2<CR>==gi")					-- Move text down
 
 -- Changing the working directory to the current file location
 map('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')
 
 -- All nvim-tree realted mappings --
 -- Full defaults here: https://raw.githubusercontent.com/kyazdani42/nvim-tree.lua/master/doc/nvim-tree-lua.txt
-map('n', '<C-t>', ':NvimTreeToggle<CR>')
+map('n', '<Leader>e', ':NvimTreeToggle<CR>')
+
+-----------------
+-- Visual Mode --
+-----------------
+map("v", "<A-k>", ":m .-2<CR>==")							-- Move text up and down
+map("v", "<A-j>", ":m .+1<CR>==")
+map("v", "p", '"_dP')										-- When pasting, don't cut text pasted over
 
 -- LSP CONFIG
 --map('n', 'gd', ':Lspsaga peek_definition<CR>')
@@ -59,17 +72,3 @@ map('n', '<leader>,', ':BufferPrevious<CR>')
 
 --- Close tabs
 map('n', '<A-c>', ':BufferClose<CR>')
-
---------------------------------------
--- Window navigation
-map('n', '<leader>k', ':wincmd k<CR>')
-map('n', '<leader>j', ':wincmd j<CR>')
-map('n', '<leader>h', ':wincmd h<CR>')
-map('n', '<leader>l', ':wincmd l<CR>')
-
------ Telescope
-local builtin = require('telescope.builtin')
-map('n', 'ff', builtin.find_files, {})
-map('n', 'fg', builtin.live_grep, {})
-map('n', 'fb', builtin.buffers, {})
-map('n', 'fh', builtin.help_tags, {})

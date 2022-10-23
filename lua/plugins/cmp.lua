@@ -4,9 +4,13 @@ if not cmp_status_ok then
   return
 end
 
---local snip_status_ok, luasnip = pcall(require, "luasnip".filetype_extend("dart", {"flutter"}))
-local snip_status_ok, luasnip = pcall(require, "luasnip")
+-- Friendly snippets luasnip extension plugin
+require'luasnip'.filetype_extend("dart", {"flutter"})
+
+--local snip_status_ok, luasnip = pcall(require, 'luasnip'.filetype_extend("dart", {"flutter"}))
+local snip_status_ok, luasnip = pcall(require, 'luasnip')
 if not snip_status_ok then
+  vim.notify("Luasnip failed to initialize")
   return
 end
 

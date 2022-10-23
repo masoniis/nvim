@@ -41,6 +41,7 @@ local plugins = {
 	"williamboman/mason-lspconfig.nvim",
 	"jose-elias-alvarez/null-ls.nvim",												-- for formatters and linters
 	"RRethy/vim-illuminate",														-- uses lsp to highlight uses of a word hovered
+	"glepnir/lspsaga.nvim",
   	--'natebosch/vim-lsc',															--
   	--'natebosch/vim-lsc-dart',														--
 		

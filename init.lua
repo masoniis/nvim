@@ -21,3 +21,5 @@ end
 for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/plugins/lsp', [[v:val =~ '\.lua$']])) do
   require('plugins.lsp.'..file:gsub('%.lua$', ''))
 end
+
+require("plugins.lsp.handlers").setup()
