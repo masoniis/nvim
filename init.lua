@@ -14,12 +14,12 @@ import('colorscheme')
 
 -- Automatically require config in the plugins folder
 for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/plugins', [[v:val =~ '\.lua$']])) do
-  require('plugins.'..file:gsub('%.lua$', ''))
+  import('plugins.'..file:gsub('%.lua$', ''))
 end
 
 -- Automatically require configs in the plugins/lsp folder
 for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/plugins/lsp', [[v:val =~ '\.lua$']])) do
-  require('plugins.lsp.'..file:gsub('%.lua$', ''))
+  import('plugins.lsp.'..file:gsub('%.lua$', ''))
 end
 
-require("plugins.lsp.handlers").setup()
+import("plugins.lsp.handlers").setup()

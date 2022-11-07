@@ -6,7 +6,7 @@ end
 
 nvimtree.setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'dart' },
+  ensure_installed = { 'c', 'cpp', 'go', 'python', 'rust', 'typescript', 'dart' },
 
   highlight = { enable = true },
   indent = { enable = true },

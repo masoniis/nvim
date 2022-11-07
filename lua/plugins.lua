@@ -24,9 +24,13 @@ local plugins = {
 	'folke/which-key.nvim',
 	'NumToStr/Comment.nvim',														-- Easily comment stuff
 	'JoosepAlviste/nvim-ts-context-commentstring',									-- Recognize what filetype to comment
+	"akinsho/toggleterm.nvim",														-- Easy access to a toggle terminal
 	{'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}},			-- Tabs for files
 	{'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}},  		-- File tree
 	{'nvim-telescope/telescope.nvim', branch = '0.1.x'},							-- Fuzzy finder
+	{ 'michaelb/sniprun', run = 'bash ./install.sh'},
+	'mfussenegger/nvim-dap',
+	{ "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} },
 
 	--- Auto completion
 	'hrsh7th/nvim-cmp',
@@ -42,8 +46,6 @@ local plugins = {
 	"jose-elias-alvarez/null-ls.nvim",												-- for formatters and linters
 	"RRethy/vim-illuminate",														-- uses lsp to highlight uses of a word hovered
 	"glepnir/lspsaga.nvim",
-  	--'natebosch/vim-lsc',															--
-  	--'natebosch/vim-lsc-dart',														--
 		
 	--- Snippets
 	"L3MON4D3/LuaSnip",

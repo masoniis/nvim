@@ -32,10 +32,10 @@ map("n", "<C-Left>", ":vertical resize -2<CR>")				-- II
 map("n", "<C-Right>", ":vertical resize +2<CR>")			-- II
 
 local builtin = require('telescope.builtin')
-map('n', 'ff', builtin.find_files, {})						-- Telescope find files
-map('n', 'fg', builtin.live_grep, {})						-- Telescope live grep
-map('n', 'fb', builtin.buffers, {})							-- Telescope buffers
-map('n', 'fh', builtin.help_tags, {})						-- Telescope help tags
+map('n', 'ff', builtin.find_files)						-- Telescope find files
+map('n', 'fg', builtin.live_grep)						-- Telescope live grep
+map('n', 'fb', builtin.buffers)							-- Telescope buffers
+map('n', 'fh', builtin.help_tags)						-- Telescope help tags
 
 map("n", "<A-j>", "<Esc>:m .+1<CR>==gi")					-- Move text up
 map("n", "<A-k>", "<Esc>:m .-2<CR>==gi")					-- Move text down
@@ -53,12 +53,6 @@ map('n', '<Leader>e', ':NvimTreeToggle<CR>')
 map("v", "<A-k>", ":m .-2<CR>==")							-- Move text up and down
 map("v", "<A-j>", ":m .+1<CR>==")
 map("v", "p", '"_dP')										-- When pasting, don't cut text pasted over
-
--- LSP CONFIG
---map('n', 'gd', ':Lspsaga peek_definition<CR>')
---map('n', 'gr', ':Lspsaga rename<CR>')
---map({'n','v'}, '<leader>ca', ':Lspsaga code_action<CR>')
---map('n', '<leader>o', ':LSoutlineToggle<CR>')
 
 ----------------------------------------
 -- Barber mappings

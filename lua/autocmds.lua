@@ -7,6 +7,8 @@ api.nvim_create_autocmd("TextYankPost", {
   group = yankGrp,
 })
 
+api.nvim_create_autocmd("VimEnter", { command = [[:cd /Users/mason/dev/]]})
+
 -- Check if we need to reload the file when it changed
 api.nvim_create_autocmd("FocusGained", { command = [[:checktime]] })
 
