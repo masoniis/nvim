@@ -146,9 +146,58 @@
        },
        {
          "key": "c",
-         "name": "Copy path of active file",
-         "type": "command",
-         "command": "workbench.action.files.copyPathOfActiveFile"
+         "name": "UI collapse-states...",
+         "type": "bindings",
+         "bindings": [
+           {
+             "key": "a",
+             "name": "Toggle activity bar visibility",
+             "type": "command",
+             "command": "workbench.action.toggleActivityBarVisibility"
+           },
+           {
+             "key": "b",
+             "name": "Toggle side bar visibility",
+             "type": "command",
+             "command": "workbench.action.toggleSidebarVisibility"
+           },
+           {
+             "key": "c",
+             "name": "Copy path of active file",
+             "type": "command",
+             "command": "workbench.action.files.copyPathOfActiveFile"
+           },
+           {
+             "key": "j",
+             "name": "Toggle panel visibility",
+             "type": "command",
+             "command": "workbench.action.togglePanel"
+           },
+           {
+             "key": "F",
+             "name": "Toggle full screen",
+             "type": "command",
+             "command": "workbench.action.toggleFullScreen"
+           },
+           {
+             "key": "s",
+             "name": "Select theme",
+             "type": "command",
+             "command": "workbench.action.selectTheme"
+           },
+           {
+             "key": "m",
+             "name": "Toggle maximized panel",
+             "type": "command",
+             "command": "workbench.action.toggleMaximizedPanel"
+           },
+           {
+             "key": "t",
+             "name": "Toggle tab visibility",
+             "type": "command",
+             "command": "workbench.action.toggleTabsVisibility"
+           }
+         ]
        },
        {
          "key": "d",
@@ -486,55 +535,6 @@
              "name": "Toggle Terminal",
              "type": "command",
              "command": "workbench.action.togglePanel"
-           }
-         ]
-       },
-       {
-         "key": "T",
-         "name": "UI toggles...",
-         "type": "bindings",
-         "bindings": [
-           {
-             "key": "b",
-             "name": "Toggle side bar visibility",
-             "type": "command",
-             "command": "workbench.action.toggleSidebarVisibility"
-           },
-           {
-             "key": "j",
-             "name": "Toggle panel visibility",
-             "type": "command",
-             "command": "workbench.action.togglePanel"
-           },
-           {
-             "key": "F",
-             "name": "Toggle full screen",
-             "type": "command",
-             "command": "workbench.action.toggleFullScreen"
-           },
-           {
-             "key": "s",
-             "name": "Select theme",
-             "type": "command",
-             "command": "workbench.action.selectTheme"
-           },
-           {
-             "key": "m",
-             "name": "Toggle maximized panel",
-             "type": "command",
-             "command": "workbench.action.toggleMaximizedPanel"
-           },
-           {
-             "key": "t",
-             "name": "Toggle tool/activity bar visibility",
-             "type": "command",
-             "command": "workbench.action.toggleActivityBarVisibility"
-           },
-           {
-             "key": "T",
-             "name": "Toggle tab visibility",
-             "type": "command",
-             "command": "workbench.action.toggleTabsVisibility"
            }
          ]
        },
