@@ -9,8 +9,8 @@ end
 
 local plugins = {
 	'wbthomason/packer.nvim',	-- Working	
-	'nvim-lua/plenary.nvim',	--
-	'michaelb/sniprun',			--
+	'nvim-lua/plenary.nvim',	-- ??
+	'michaelb/sniprun',			-- ??
 }
 
 -- Protected call packer so don't error out on first use
