@@ -3,8 +3,6 @@ local function import(module)
     return require(module)
 end
 
-local colorscheme = "tokyonight-night"
-
 import('settings')
 import('autocmds')
 import('plugins')

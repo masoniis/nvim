@@ -84,10 +84,15 @@ _G.packer_plugins = {
     path = "/Users/mason/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["tokyonight.nvim"] = {
+  sniprun = {
     loaded = true,
-    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/sniprun",
+    url = "https://github.com/michaelb/sniprun"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

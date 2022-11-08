@@ -8,12 +8,9 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 local plugins = {
-	'wbthomason/packer.nvim',														-- Plugin manager
-	'nvim-lua/plenary.nvim',														-- Provides useful lua plugins, common dependency
-	'folke/tokyonight.nvim',
-	'nvim-whichkey.nvim',
-	'nvim-sniprun.nvim',
-	'nvim-trisitter.nvim',
+	'wbthomason/packer.nvim',	-- Working	
+	'nvim-lua/plenary.nvim',	--
+	'michaelb/sniprun',			--
 }
 
 -- Protected call packer so don't error out on first use
@@ -21,15 +18,6 @@ local status_ok, packer = pcall(require, "packer")
 if not status_ok then
 	return
 end
-
--- Have packer use a popup window
-packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
-})
 
 return packer.startup(function(use)
 	for _, plugin in ipairs(plugins) do
