@@ -2,7 +2,6 @@ local function map(m, k, v)
   vim.keymap.set(m, k, v, { silent = true })
 end
 
-
 map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "												-- Leader to space
 vim.g.maplocalleader= " "											-- II
@@ -31,11 +30,6 @@ map("n", "<C-Down>", ":resize -2<CR>")						-- II
 map("n", "<C-Left>", ":vertical resize -2<CR>")				-- II
 map("n", "<C-Right>", ":vertical resize +2<CR>")			-- II
 
-local builtin = require('telescope.builtin')
-map('n', 'ff', builtin.find_files)						-- Telescope find files
-map('n', 'fg', builtin.live_grep)						-- Telescope live grep
-map('n', 'fb', builtin.buffers)							-- Telescope buffers
-map('n', 'fh', builtin.help_tags)						-- Telescope help tags
 
 map("n", "<A-j>", "<Esc>:m .+1<CR>==gi")					-- Move text up
 map("n", "<A-k>", "<Esc>:m .-2<CR>==gi")					-- Move text down
