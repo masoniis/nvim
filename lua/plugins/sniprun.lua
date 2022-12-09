@@ -1,7 +1,10 @@
 local status_ok, sniprun = pcall(require, "sniprun")
 if not status_ok then
+  print("Status of Sniprun is not good")
 	return
 end
+
+print("File test run")
 
 sniprun.setup({
   selected_interpreters = {},     --# use those instead of the default for the current filetype

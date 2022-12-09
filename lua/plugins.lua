@@ -9,8 +9,9 @@ end
 
 local plugins = {
 	'wbthomason/packer.nvim',	-- Working	
-	'nvim-lua/plenary.nvim',	-- ??
-	'michaelb/sniprun',			-- ??
+	'nvim-lua/plenary.nvim',	-- Probably working 
+	'NumToStr/Comment.nvim',
+	{'michaelb/sniprun', run = 'bash ./install.sh'},	-- Wr
 }
 
 -- Protected call packer so don't error out on first use

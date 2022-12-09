@@ -20,10 +20,9 @@ map('n', '<C-l>', ":call VSCodeNotify('workbench.action.navigateRight')<CR>") --
 map("n", "<A-j>", "<Esc>:m .+1<CR>==gi")  --- Move text up
 map("n", "<A-k>", "<Esc>:m .-2<CR>==gi")  --- Move text down
 
--- Changing the working directory to the current file location
-map('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')
-
+---------------------
 -- Insert Mode (i) --
+---------------------
 
 ---------------------
 -- Visual Mode (v) --
@@ -32,6 +31,15 @@ map("v", "<A-k>", ":m .-2<CR>==")							-- Move text up and down
 map("v", "<A-j>", ":m .+1<CR>==")
 map("v", "p", '"_dP')										-- When pasting, don't cut text pasted over
 
+
+---------------------------
 -- Visual Block Mode (x) --
+---------------------------
+
+-------------------
 -- Term Mode (t) --
+-------------------
+
+----------------------
 -- Command Mode (c) --
+----------------------
