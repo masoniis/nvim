@@ -74,6 +74,26 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/NumToStr/Comment.nvim"
+  },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/mjlbach/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/mason/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -88,6 +108,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/mason/.local/share/nvim/site/pack/packer/start/sniprun",
     url = "https://github.com/michaelb/sniprun"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   }
 }
 

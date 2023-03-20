@@ -8,6 +8,9 @@ local options = {
 	shiftwidth=4,				-- 4 spaces when indenting with '>'
 	smartcase = true,
 	ignorecase = true,
+	-- Fold based on indents rather than manual
+	foldmethod = indent,
+	foldlevel = 99,
 --	scrolloff = 8, 				-- Handled in VSCode settings 
 --	sidescrolloff = 8,			-- Handled in VSCode settings
 }
