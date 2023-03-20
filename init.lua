@@ -11,4 +11,4 @@ else
 end
 
 -- Imports that aren't specific to vscode neovim or default nvim
-import('settings')
+import_dir(config .. '/lua/common')

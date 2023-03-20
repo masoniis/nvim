@@ -1,4 +1,4 @@
--- These are helper functions for the init.lua
+-- These are helper functions for the init.lua to recursively load .lua files
 
 -- Import modules rather than requiring, to unload them so updates are applied.
 local function import(module)
