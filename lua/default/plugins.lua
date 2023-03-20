@@ -8,19 +8,22 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 local plugins = {
-	'wbthomason/packer.nvim', -- Working	
-	'nvim-lua/plenary.nvim', -- Probably working
+	'wbthomason/packer.nvim',                           -- Working	
+	'nvim-lua/plenary.nvim',                            -- Probably working
 	'NumToStr/Comment.nvim',
-	-- { 'michaelb/sniprun', run = 'bash ./install.sh' }, -- Wr
+	{ 'nvim-telescope/telescope.nvim', branch = '0.1.x' }, -- Fuzzy finder
 
 	--------------------
 	-- Visual plugins --
 	--------------------
 	--- Themes:
-	'mjlbach/onedark.nvim',     -- Theme inspired by Atom
-	'shaunsingh/nord.nvim',     -- Cool nordic theme
-	'folke/tokyonight.nvim',    -- Tokyo night theme
-	'projekt0n/github-nvim-theme', -- Github themes
+	'mjlbach/onedark.nvim',                                                      -- Theme inspired by Atom
+	'shaunsingh/nord.nvim',                                                      -- Cool nordic theme
+	'folke/tokyonight.nvim',                                                     -- Tokyo night theme
+	'projekt0n/github-nvim-theme',                                               -- Github themes
+	--- Other:
+	{ 'goolord/alpha-nvim',            requires = 'kyazdani42/nvim-web-devicons' }, -- Startup screen
+	'rcarriga/nvim-notify',                                                      -- Cool notifications
 
 }
 

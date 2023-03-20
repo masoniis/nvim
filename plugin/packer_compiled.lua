@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/mason/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/NumToStr/Comment.nvim"
   },
+  ["alpha-nvim"] = {
+    loaded = true,
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["github-nvim-theme"] = {
     loaded = true,
     path = "/Users/mason/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
@@ -88,6 +93,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/mason/.local/share/nvim/site/pack/packer/start/nord.nvim",
     url = "https://github.com/shaunsingh/nord.nvim"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
     loaded = true,
@@ -103,11 +113,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/mason/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  sniprun = {
-    loaded = true,
-    path = "/Users/mason/.local/share/nvim/site/pack/packer/start/sniprun",
-    url = "https://github.com/michaelb/sniprun"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
