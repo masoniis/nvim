@@ -11,6 +11,7 @@ local options = {
 	-- Fold based on indents rather than manual
 	foldmethod = indent,
 	foldlevel = 99,
+	cmdheight = 0, -- When a command is not being typed, height is 0 instead of 1 line
 --	scrolloff = 8, 				-- Handled in VSCode settings 
 --	sidescrolloff = 8,			-- Handled in VSCode settings
 }
