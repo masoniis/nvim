@@ -12,8 +12,9 @@ local options = {
 	foldmethod = indent,
 	foldlevel = 99,
 	cmdheight = 0, -- When a command is not being typed, height is 0 instead of 1 line
---	scrolloff = 8, 				-- Handled in VSCode settings 
---	sidescrolloff = 8,			-- Handled in VSCode settings
+	scrolloff = 8, 				-- Handled in VSCode settings, makes it so it starts scrolling before cursor reaches e
+	sidescrolloff = 8,			-- Handled in VSCode settings
+	laststatus = 3;
 }
 
 for option, value in pairs(options) do

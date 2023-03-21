@@ -1,11 +1,15 @@
 return {
     'nvim-telescope/telescope.nvim', -- fuzzy finder
+	dependencies = {"BurntSushi/ripgrep", "nvim-lua/plenary.nvim"},
     config = function()
         local status_ok, telescope = pcall(require, "telescope")
         if not status_ok then
             vim.notify("Telescope failed to initialize.")
             return
         end
+
+		-- Extension for project.nvim
+		telescope.load_extension('projects')
 
         telescope.setup {
             defaults = {
