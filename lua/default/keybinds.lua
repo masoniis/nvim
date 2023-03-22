@@ -66,6 +66,3 @@ map('n', '<leader>,', ':BufferPrevious<CR>')
 
 --- Close tabs
 map('n', '<A-c>', ':BufferClose<CR>')
-
--- COMENT
-vim.notify("Default nvim keybinds loaded.")

@@ -15,6 +15,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Imports that aren't specific to vscode neovim or default nvim
+import_dir(config .. '/lua/common')
+
 -- If this is a nvim instance inside vscode (vscode-neovim)
 if vim.g.vscode then
   -- Vscode nvim
@@ -26,5 +29,3 @@ else
   require("lazy").setup("default.plugins")
 end
 
--- Imports that aren't specific to vscode neovim or default nvim
-import_dir(config .. '/lua/common')
