@@ -3,7 +3,7 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	keys = {
-      { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "asdasdNvimtree" },
+      { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Nvimtree" },
     },
 	config = function()
         local status_ok, nvimtree = pcall(require, "nvim-tree")
