@@ -94,7 +94,8 @@ return {
             --dashboard.button("b", "  > Bookmarks", ":Telescope marks<CR>"),
             dashboard.button("b", "  > Projects", ":Telescope projects<CR>"),
             dashboard.button("t", "嗀 > Themes", ":Telescope colorscheme<CR>"),
-            dashboard.button("p", "擄 > Plugins", ":Lazy<CR>"),
+            dashboard.button("p", "󰓅  > Plugins", ":Lazy<CR>"),
+            dashboard.button("m", "  > Language servers", ":Mason<CR>"),
             dashboard.button("s", "  > Settings", ":e ~/.config/nvim/lua/common/settings.lua<CR>"),
             dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
         }

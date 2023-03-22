@@ -43,10 +43,6 @@ map("n", "<A-k>", "<Esc>:m .-2<CR>==gi") -- Move text down
 -- Changing the working directory to the current file location
 map('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')
 
--- All nvim-tree realted mappings --
--- Full defaults here: https://raw.githubusercontent.com/kyazdani42/nvim-tree.lua/master/doc/nvim-tree-lua.txt
-map('n', '<Leader>e', ':NvimTreeToggle<CR>')
-
 -----------------
 -- Visual Mode --
 -----------------
