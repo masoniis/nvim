@@ -22,8 +22,3 @@ api.nvim_create_autocmd("CmdlineEnter", {
 api.nvim_create_autocmd("CmdlineLeave", {
 	command = ":set cmdheight=0",
 })
-
--- Automatically format on save
-api.nvim_create_autocmd("BufWritePre", {
-	command = ":lua vim.lsp.buf.format {async = true}",
-})

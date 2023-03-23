@@ -43,6 +43,7 @@ return {
 		}
 
 		local doomvim = {
+			[[                                                                              ]],
 			[[=================     ===============     ===============   ========  ========]],
 			[[\\ . . . . . . .\\   //. . . . . . .\\   //. . . . . . .\\  \\. . .\\// . . //]],
 			[[||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\/ . . .||]],
@@ -77,7 +78,7 @@ return {
 			[[                                                                       ]],
 		}
 
-		local headers = { corpsvim, isovim, doomvim, sharpvim }
+		local headers = { corpsvim, isovim, sharpvim }
 
 		local function header_chars()
 			math.randomseed(os.time())
@@ -96,7 +97,7 @@ return {
 			dashboard.button("t", "嗀 > Themes", ":Telescope colorscheme<CR>"),
 			dashboard.button("p", "󰓅  > Plugins", ":Lazy<CR>"),
 			dashboard.button("m", "  > Language servers", ":Mason<CR>"),
-			dashboard.button("s", "  > Settings", ":e ~/.config/nvim/lua/common/settings.lua<CR>"),
+			--dashboard.button("s", "  > Settings", ":e ~/.config/nvim/lua/common/settings.lua<CR>"),
 			dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
 		}
 
@@ -120,7 +121,7 @@ return {
 			end,
 		})
 
-		-- Hide cursor on alpha buffer
+		--Hide cursor on alpha buffer
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "AlphaReady",
 			callback = function()

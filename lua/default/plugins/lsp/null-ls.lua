@@ -17,9 +17,17 @@ return {
 		null_ls.setup({
 			debug = false,
 			sources = {
-				-- Lua formatting
-				formatting.stylua,
+				formatting.stylua, -- Lua opinionated formatting
+				formatting.clang_format,
 			},
+			-- Format on save automatically, only if formatting is supported by document
+			on_attach = function(client, _)
+				if client.supports_method("textDocument/formatting") then
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						command = ":lua vim.lsp.buf.format {async = true}",
+					}) -- vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+				end
+			end,
 		})
-	end
+	end,
 }
