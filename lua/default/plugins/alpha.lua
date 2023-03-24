@@ -1,6 +1,6 @@
 return {
 	"goolord/alpha-nvim",
-	dependencies = "kyazdani42/nvim-web-devicons", -- startup screen
+	dependencies = "nvim-tree/nvim-web-devicons", -- startup screen
 	config = function()
 		-- Protected require alpha
 		local status_ok, alpha = pcall(require, "alpha")
@@ -94,8 +94,9 @@ return {
 			dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
 			--dashboard.button("b", "  > Bookmarks", ":Telescope marks<CR>"),
 			dashboard.button("b", "  > Projects", ":Telescope projects<CR>"),
-			dashboard.button("t", "嗀 > Themes", ":Telescope colorscheme<CR>"),
-			dashboard.button("p", "󰓅  > Plugins", ":Lazy<CR>"),
+			-- 嗀
+			dashboard.button("t", "  > Themes", ":Telescope colorscheme<CR>"),
+			dashboard.button("p", "  > Plugins", ":Lazy<CR>"),
 			dashboard.button("m", "  > Language servers", ":Mason<CR>"),
 			--dashboard.button("s", "  > Settings", ":e ~/.config/nvim/lua/common/settings.lua<CR>"),
 			dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
@@ -121,26 +122,26 @@ return {
 			end,
 		})
 
-		--Hide cursor on alpha buffer
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "AlphaReady",
-			callback = function()
-				local hl = vim.api.nvim_get_hl_by_name("Cursor", true)
-				hl.blend = 100
-				vim.api.nvim_set_hl(0, "Cursor", hl)
-				vim.opt.guicursor:append("a:Cursor/lCursor")
-			end,
-		})
-
-		-- Unhide cursor when leaving alpha
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "AlphaClosed",
-			callback = function()
-				local hl = vim.api.nvim_get_hl_by_name("Cursor", true)
-				hl.blend = 0
-				vim.api.nvim_set_hl(0, "Cursor", hl)
-				vim.opt.guicursor:append("a:Cursor/lCursor")
-			end,
-		})
+		-- --Hide cursor on alpha buffer
+		-- vim.api.nvim_create_autocmd("User", {
+		-- 	pattern = "AlphaReady",
+		-- 	callback = function()
+		-- 		local hl = vim.api.nvim_get_hl_by_name("Cursor", true)
+		-- 		hl.blend = 100
+		-- 		vim.api.nvim_set_hl(0, "Cursor", hl)
+		-- 		vim.opt.guicursor:append("a:Cursor/lCursor")
+		-- 	end,
+		-- })
+		--
+		-- -- Unhide cursor when leaving alpha
+		-- vim.api.nvim_create_autocmd("User", {
+		-- 	pattern = "AlphaClosed",
+		-- 	callback = function()
+		-- 		local hl = vim.api.nvim_get_hl_by_name("Cursor", true)
+		-- 		hl.blend = 0
+		-- 		vim.api.nvim_set_hl(0, "Cursor", hl)
+		-- 		vim.opt.guicursor:append("a:Cursor/lCursor")
+		-- 	end,
+		-- })
 	end,
 }

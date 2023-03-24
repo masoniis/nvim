@@ -12,11 +12,12 @@ return {
 			["<leader>"] = {
 				a = { "<cmd>Alpha<cr>", "Alpha" },
 				f = {
-					name = "+file",
+					name = "+file/float",
 					f = { "<cmd>Telescope find_files<cr>", "Find File" },
 					r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 					n = { "<cmd>enew<cr>", "New File" },
 				},
+				F = { "<cmd>lua vim.lsp.buf.format {async = false}<cr>", "Format" },
 			},
 		})
 

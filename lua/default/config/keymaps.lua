@@ -3,6 +3,7 @@ local function map(m, k, v)
 end
 
 --- Leader key
+-- Map leader to nothing to make sure it is empty
 map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -13,7 +14,7 @@ vim.g.maplocalleader = " "
 --   visual_mode = "v",
 --   visual_block_mode = "x",
 --   term_mode = "t",
---   command_mode = "c",
+-- command_mode = "c",
 
 -----------------
 -- Normal Mode --
@@ -23,6 +24,8 @@ map("n", "k", "gk") -- II
 
 map("n", "<C-k>", ":wincmd k<CR>") -- Window navigation
 map("n", "<C-j>", ":wincmd j<CR>") -- II
+
+
 map("n", "<C-h>", ":wincmd h<CR>") -- II
 map("n", "<C-l>", ":wincmd l<CR>") -- II
 
