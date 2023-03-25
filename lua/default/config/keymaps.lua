@@ -34,12 +34,6 @@ map("n", "<C-Down>", ":resize -2<CR>") -- II
 map("n", "<C-Left>", ":vertical resize -2<CR>") -- II
 map("n", "<C-Right>", ":vertical resize +2<CR>") -- II
 
--- local builtin = require('telescope.builtin')
--- map('n', 'ff', builtin.find_files)       -- Telescope find files
--- map('n', 'fg', builtin.live_grep)        -- Telescope live grep
--- map('n', 'fb', builtin.buffers)          -- Telescope buffers
--- map('n', 'fh', builtin.help_tags)        -- Telescope help tags
-
 map("n", "<A-j>", "<Esc>:m .+1<CR>==gi") -- Move text up
 map("n", "<A-k>", "<Esc>:m .-2<CR>==gi") -- Move text down
 
@@ -65,3 +59,12 @@ map("n", "<leader>,", ":BufferPrevious<CR>")
 
 --- Close tabs
 map("n", "<A-c>", ":BufferClose<CR>")
+
+--- Terminal mode to navigate in and out
+map('t', '<esc>', [[<C-\><C-n>]])
+map('t', 'jk', [[<C-\><C-n>]])
+map('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
+map('t', '<C-j>', [[<Cmd>wincmd j<CR>]])
+map('t', '<C-k>', [[<Cmd>wincmd k<CR>]])
+map('t', '<C-l>', [[<Cmd>wincmd l<CR>]])
+map('t', '<C-w>', [[<C-\><C-n><C-w>]])
