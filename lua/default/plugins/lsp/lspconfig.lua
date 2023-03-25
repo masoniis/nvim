@@ -10,9 +10,11 @@ return {
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
+		-- Nvim cmp default capabilities
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		-- Lua language server
-		lspconfig.lua_ls.setup({})
-		lspconfig.clangd.setup({})
+		lspconfig.lua_ls.setup({capabilities = capabilities})
+		lspconfig.clangd.setup({capabilities = capabilities})
 	end,
 }

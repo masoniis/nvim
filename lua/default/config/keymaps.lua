@@ -62,7 +62,8 @@ map("n", "<A-c>", ":BufferClose<CR>")
 
 --- Terminal mode to navigate in and out
 map('t', '<esc>', [[<C-\><C-n>]])
-map('t', 'jk', [[<C-\><C-n>]])
+-- Having this keybind makes normal j navigationi n terminal slow
+--map('t', 'jk', [[<C-\><C-n>]])
 map('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
 map('t', '<C-j>', [[<Cmd>wincmd j<CR>]])
 map('t', '<C-k>', [[<Cmd>wincmd k<CR>]])

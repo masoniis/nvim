@@ -1,6 +1,7 @@
 return {
 	'hrsh7th/nvim-cmp',
 	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {"L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip"},
 	config = function()
         local status_ok, cmp = pcall(require, "cmp")
         if not status_ok then
