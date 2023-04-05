@@ -1,3 +1,4 @@
+-- inject LSP diagnostics, code actions, and more via Lua
 return {
 	"jose-elias-alvarez/null-ls.nvim",
 	event = { "BufReadPre", "BufNewFile" },

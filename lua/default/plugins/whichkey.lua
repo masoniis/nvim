@@ -18,6 +18,9 @@ return {
 					n = { "<cmd>enew<cr>", "New File" },
 				},
 				F = { "<cmd>lua vim.lsp.buf.format {async = false}<cr>", "Format" },
+				s = {
+					name = "Lspsaga show"
+				}
 			},
 		})
 

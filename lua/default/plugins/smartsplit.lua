@@ -4,6 +4,7 @@ return {
 		require("smart-splits").setup({
 			cursor_follows_swapped_bufs = true, -- When swapping, follow with the swap window (default false)
 			default_amount = 1, -- set default resize interval to 1 instead of 3
+			-- wrap_at_edge = false, -- disable circular wrapping because of wezterm wrap delay
 		})
 
 		-- recommended mappings
