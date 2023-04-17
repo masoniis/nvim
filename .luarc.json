@@ -1,4 +1,5 @@
 {
+    "Lua.workspace.checkThirdParty": false,
     "workspace.library": [
         "/Users/mason/.local/share/nvim/lazy/neodev.nvim/types/stable",
         "/opt/homebrew/Cellar/neovim/0.8.3/share/nvim/runtime/lua",
@@ -27,6 +28,5 @@
         "/Users/mason/.local/share/nvim/lazy/neoconf.nvim/types",
         "/Users/mason/.local/share/nvim/lazy/neoconf.nvim/types/lua",
         "/Users/mason/.config/nvim/lua",
-        "${3rd}/luv/library"
-    ]
+    ],
 }

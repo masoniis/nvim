@@ -17,6 +17,9 @@ return {
 			vim.cmd("set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow")
 			vim.cmd([[set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow]])
 
+			vim.cmd("highlight WinBarNC guibg=#2A2B3C")
+			vim.cmd("highlight WinBar guibg=#2A2B3C")
+
 			-- vim.cmd("hi ActiveWindow ctermbg=16 | hi InactiveWindow ctermbg=233")
 			-- vim.cmd("set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow")
 			-- vim.cmd([[set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow,VertSplit:ActiveVertSplit]])

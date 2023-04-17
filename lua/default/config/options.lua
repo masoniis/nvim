@@ -10,15 +10,14 @@ local options = {
 	ignorecase = true,
 	-- Fold based on indents rather than manual
 	cmdheight = 0, -- When a command is not being typed, height is 0 instead of 1 line
-	scrolloff = 8, -- Handled in VSCode settings, makes it so it starts scrolling before cursor reaches e
+	scrolloff = 6, -- Handled in VSCode settings, makes it so it starts scrolling before cursor reaches e
 	sidescrolloff = 8, -- Handled in VSCode settings
 	laststatus = 3,
 	-- Folding options
-	-- foldmethod = "indent",
-	-- foldenable = false, -- don't fold all indents by default
-	-- foldlevel = 99, -- Fold this many indentations (essentially inf)
-	foldmethod = "expr",
-	foldexpr = "nvim_treesitter#foldexpr()", -- nvim-treesitter folding
+	foldmethod = "indent",
+	foldlevel = 99, -- Fold this many indentations (essentially inf)
+	-- foldmethod = "expr",
+	-- foldexpr = "nvim_treesitter#foldexpr()", -- nvim-treesitter folding
 	foldenable = false,
 }
 

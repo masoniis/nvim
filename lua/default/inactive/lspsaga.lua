@@ -2,8 +2,35 @@ return {
 	"glepnir/lspsaga.nvim",
 	event = "LspAttach",
 	config = function()
-		require("lspsaga").setup({})
+		require("lspsaga").setup({
+			ui = {
+				-- This option only works in Neovim 0.9
+				title = false,
+				-- Border type can be single, double, rounded, solid, shadow.
+				border = "single",
+				winblend = 0,
+				expand = "",
+				collapse = "",
+				code_action = "💡",
+				incoming = " ",
+				outgoing = " ",
+				hover = " ",
+				kind = {},
+			},
+			symbol_in_winbar = {
+				enable = false, -- Disable Filepath stuff in the winbar
+			},
+		})
 		local keymap = vim.keymap.set
+
+		-- Hihglight based on active window
+		require("lspsaga.lspkind").get_kind_group()
+		-- vim.cmd("highlight SagaWinbarFileName guibg=#2A2B3C")
+		-- vim.cmd("highlight SagaWinbarFileIcon guibg=#2A2B3C")
+		-- vim.cmd("highlight SagaWinbarFolderName guibg=#2A2B3C")
+		-- vim.cmd("highlight SagaWinbarFolder guibg=#2A2B3C")
+		-- vim.cmd("highlight SagaWinbarFunction guibg=#2A2B3C")
+		-- vim.cmd("highlight SagaWinbarSep guibg=#2A2B3C")
 
 		-- LSP finder - Find the symbol's definition
 		-- If there is no definition, it will instead be hidden

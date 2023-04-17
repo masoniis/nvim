@@ -13,6 +13,11 @@ api.nvim_create_autocmd("FocusGained", { command = [[:checktime]] })
 -- Don't auto comment new line
 api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
+-- Auto enter terminal when tabbing into a terminal pane
+api.nvim_create_autocmd("TermOpen", { command = [[startinsert]] })
+api.nvim_create_autocmd("TermOpen", { command = [[setlocal nonumber norelativenumber]] }) --- Remove line numbers in a terminal
+api.nvim_create_autocmd("BufEnter,WinEnter", {pattern = {"term://*"}, command = "startinsert", nested = true}) -- Inter insert mode on window temrinal focus
+
 -- When entering command mode, set height to 1 in order to shift statusline up so it remains visible
 api.nvim_create_autocmd("CmdlineEnter", {
 	command = ":set cmdheight=1",
