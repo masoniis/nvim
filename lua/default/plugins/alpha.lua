@@ -1,6 +1,6 @@
 return {
-	"goolord/alpha-nvim",
-	dependencies = "nvim-tree/nvim-web-devicons", -- startup screen
+	"goolord/alpha-nvim", -- nvim startup screen
+	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
 		-- Protected require alpha
 		local status_ok, alpha = pcall(require, "alpha")
@@ -121,27 +121,5 @@ return {
 				pcall(vim.cmd.AlphaRedraw)
 			end,
 		})
-
-		-- --Hide cursor on alpha buffer
-		-- vim.api.nvim_create_autocmd("User", {
-		-- 	pattern = "AlphaReady",
-		-- 	callback = function()
-		-- 		local hl = vim.api.nvim_get_hl_by_name("Cursor", true)
-		-- 		hl.blend = 100
-		-- 		vim.api.nvim_set_hl(0, "Cursor", hl)
-		-- 		vim.opt.guicursor:append("a:Cursor/lCursor")
-		-- 	end,
-		-- })
-		--
-		-- -- Unhide cursor when leaving alpha
-		-- vim.api.nvim_create_autocmd("User", {
-		-- 	pattern = "AlphaClosed",
-		-- 	callback = function()
-		-- 		local hl = vim.api.nvim_get_hl_by_name("Cursor", true)
-		-- 		hl.blend = 0
-		-- 		vim.api.nvim_set_hl(0, "Cursor", hl)
-		-- 		vim.opt.guicursor:append("a:Cursor/lCursor")
-		-- 	end,
-		-- })
 	end,
 }

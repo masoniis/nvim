@@ -19,6 +19,7 @@ local options = {
 	-- foldmethod = "expr",
 	-- foldexpr = "nvim_treesitter#foldexpr()", -- nvim-treesitter folding
 	foldenable = false,
+	-- timeoutlen = 100, -- Controls how fast whichkey appears among other things
 }
 
 for option, value in pairs(options) do

@@ -7,6 +7,8 @@ return {
 			{ "folke/neoconf.nvim", cmd = "Neoconf", config = true },
 			{ "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
 			"mason.nvim",
+			-- "mfussenegger/nvim-dap",
+   --  	"jay-babu/mason-nvim-dap.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"hrsh7th/cmp-nvim-lsp",
 		},
@@ -33,7 +35,6 @@ return {
 					-- Enable completion triggered by <c-x><c-o>
 					vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-					-- Buffer local mappings.
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
 					local opts = { buffer = ev.buf }
 					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
@@ -71,6 +72,7 @@ return {
 	},
 	{
 		"j-hui/fidget.nvim", -- Fidget spinner showing lsp processes
+		tag = "legacy", -- To avoid breaking changes
 		config = function()
 			require("fidget").setup({})
 		end,

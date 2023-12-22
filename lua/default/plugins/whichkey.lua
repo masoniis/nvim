@@ -7,10 +7,10 @@ return {
 			return
 		end
 
-		-- Maybe add commands for split screen where vertical is | and horizontal is - or _
 		wk.register({
 			["<leader>"] = {
-				a = { "<cmd>Alpha<cr>", "Alpha" },
+
+				-- a = { "<cmd>Alpha<cr>", "Alpha" },
 				f = {
 					name = "+file/float",
 					f = { "<cmd>Telescope find_files<cr>", "Find File" },

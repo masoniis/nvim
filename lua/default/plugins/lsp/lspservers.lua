@@ -16,8 +16,10 @@ return {
 
 		require("mason-lspconfig").setup({
 			ensure_installed = {
-				"lua_ls",
-				"clangd",
+				"lua_ls",   -- Lua
+				"clangd",   -- C++
+				"tsserver", -- Typescript
+				"svelte",   -- Svelte
 			},
 		})
 
@@ -36,10 +38,14 @@ return {
 		})
 
 		require("lspconfig").clangd.setup({})
+		require("lspconfig").tsserver.setup({})
+		require("lspconfig").svelte.setup({})
 
-		require("mason-null-ls").setup({
+		require("mason-null-ls").setup({ -- Can be used for formatters and debug adapters
 			ensure_installed = {
-				"stylua",
+				"stylua",    -- lua
+				"prettierd", -- typescript/javascript
+				"cpptools",  -- cpp debugger
 				-- "clang_format" not needed because clangd comes with it by default
 			},
 			automatic_installation = false,
