@@ -22,10 +22,10 @@ vim.g.maplocalleader = " "
 map("n", "j", "gj") -- Move through visual lines instead of logical lines
 map("n", "k", "gk")
 
-map("n", "<leader>f", "", "file cmds") -- Empty description keymap for whichkey
 map("n", "<leader>fn", "<cmd>enew<cr>", "New file") -- Make new file
-map("n", "<leader>F", "<cmd>lua vim.lsp.buf.format {async = false}<cr>", "Format code") -- Format mapping
-map("n", "<leader>d", "<cmd>cd %:h<cr>", "Change file dir") -- Format mapping
+map("n", "<leader>F", "<cmd>lua vim.lsp.buf.format {async = false}<cr>", "format code") -- Format mapping
+
+map("n", "<leader>cd", "<cmd>cd %:h<cr>", "change file dir") -- Format mapping
 
 -- map("n", "<C-,>", "<cmd>bprevious<cr>", "Navigate back") -- Navigate back buffer like in obsidian
 

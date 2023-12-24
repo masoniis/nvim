@@ -11,11 +11,6 @@ return {
 	keys = {
 		-- swapping buffers between windows
 		{
-			"<leader><leader>",
-			" ",
-			desc = "Swap buffer"
-		},
-		{
 			"<leader><leader>h",
 			function() require("smart-splits").swap_buf_left() end,
 			desc = "Swap buffer leftward"
