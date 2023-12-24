@@ -10,12 +10,12 @@ return {
 		{
 			"<leader>e",
 			"<cmd>NeoTreeShowToggle<cr>",
-			desc = "Toggle neotree explorer"
+			desc = "neotree explorer"
 		},
 		{
 			"<leader>E",
 			"<cmd>NeoTreeFloatToggle<cr>",
-			desc = "Toggle neotree float"
+			desc = "neotree float"
 		},
 	},
 }
