@@ -93,13 +93,13 @@ return {
 			dashboard.button("f", "  > Find file", ":cd ~/dev/ | Telescope find_files<CR>"),
 			dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
 			--dashboard.button("b", "  > Bookmarks", ":Telescope marks<CR>"),
-			dashboard.button("b", "  > Projects", ":Telescope projects<CR>"),
+			dashboard.button("b", "  > Projects", ":Telescope projects<CR>"),
 			-- 嗀
 			dashboard.button("t", "  > Themes", ":Telescope colorscheme<CR>"),
 			dashboard.button("p", "  > Plugins", ":Lazy<CR>"),
 			dashboard.button("m", "  > Language servers", ":Mason<CR>"),
 			--dashboard.button("s", "  > Settings", ":e ~/.config/nvim/lua/common/settings.lua<CR>"),
-			dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
+			dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
 		}
 
 		dashboard.section.footer.val = os.date("  %A, %Y-%m-%d")

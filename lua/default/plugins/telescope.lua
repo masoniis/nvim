@@ -6,33 +6,19 @@ return {
 		if not status_ok then
 			vim.notify("Telescope failed to initialize.")
 			return
+
 		end
 
 		-- Extension for project.nvim
 		telescope.load_extension("projects")
 
-		telescope.setup({
-			-- defaults = {
-			-- 	-- Default configuration for telescope goes here:
-			-- 	-- config_key = value,
-			-- 	mappings = {},
-			-- },
-			-- pickers = {
-			-- 	-- Default configuration for builtin pickers goes here:
-			-- 	-- picker_name = {
-			-- 	--   picker_config_key = value,
-			-- 	--   ...
-			-- 	-- }
-			-- 	-- Now the picker_config_key will be applied every time you call this
-			-- 	-- builtin picker
-			-- },
-			-- extensions = {
-			-- 	-- Your extension configuration goes here:
-			-- 	-- extension_name = {
-			-- 	--   extension_config_key = value,
-			-- 	-- }
-			-- 	-- please take a look at the readme of the extension you want to configure
-			-- },
-		})
+		telescope.setup({})
 	end,
+	cmd = "Telescope", -- lazy load on any telescope cmd
+	keys = {
+		{"<leader>f", "", desc = "file cmds"}, -- Used so whichkey will name the category
+		{"<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Search pwd files" },
+		{"<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Search live grep" },
+		{"<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Search recent files" }
+	}
 }

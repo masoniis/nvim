@@ -7,7 +7,7 @@ vim.o.foldcolumn = "0" -- '0' is not bad
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 return {
-	"kevinhwang91/nvim-ufo",
+	"kevinhwang91/nvim-ufo", -- UFO is the fold manager to make it look clean
 	dependencies = { "kevinhwang91/promise-async" },
 	config = function()
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -25,7 +25,7 @@ return {
 
 		local handler = function(virtText, lnum, endLnum, width, truncate)
 			local newVirtText = {}
-			local suffix = ("  %d "):format(endLnum - lnum)
+			local suffix = (" 󰘕 %d "):format(endLnum - lnum)
 			local sufWidth = vim.fn.strdisplaywidth(suffix)
 			local targetWidth = width - sufWidth
 			local curWidth = 0

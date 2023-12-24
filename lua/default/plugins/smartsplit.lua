@@ -5,10 +5,16 @@ return {
 			cursor_follows_swapped_bufs = true, -- When swapping, follow with the swap window (default false)
 			default_amount = 1,              -- set default resize interval to 1 instead of 3
 			-- wrap_at_edge = false, -- disable circular wrapping because of wezterm wrap delay
+			vim.keymap.set("n", "<leader><leader>", " ", { desc = "Swap buffer" })
 		})
 	end,
 	keys = {
 		-- swapping buffers between windows
+		{
+			"<leader><leader>",
+			" ",
+			desc = "Swap buffer"
+		},
 		{
 			"<leader><leader>h",
 			function() require("smart-splits").swap_buf_left() end,
