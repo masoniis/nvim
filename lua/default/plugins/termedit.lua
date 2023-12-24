@@ -1,10 +1,9 @@
 return {
 	"chomosuke/term-edit.nvim", -- Allows editing the terminal with vim commands seamlessly
-	lazy = false,              -- or ft = 'toggleterm' if you use toggleterm.nvim
-	version = '1.*',
+	event = { "TermOpen" },
 	config = function()
 		-- Calling require 'term-edit'.setup(opts) is mandatory
-		require 'term-edit'.setup {
+		require("term-edit").setup({
 			-- Mandatory option:
 			-- Set this to a lua pattern that would match the end of your prompt.
 			-- Or a table of multiple lua patterns where at least one would match the
@@ -12,8 +11,8 @@ return {
 			-- For most bash/zsh user this is '%$ '.
 			-- For most powershell/fish user this is '> '.
 			-- For most windows cmd user this is '>'.
-			prompt_end = '%$ ',
+			prompt_end = "%$ ",
 			-- How to write lua patterns: https://www.lua.org/pil/20.2.html
-		}
-	end
+		})
+	end,
 }

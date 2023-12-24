@@ -8,7 +8,7 @@ return {
 			{ "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
 			"mason.nvim",
 			-- "mfussenegger/nvim-dap",
-   --  	"jay-babu/mason-nvim-dap.nvim",
+			--  	"jay-babu/mason-nvim-dap.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"hrsh7th/cmp-nvim-lsp",
 		},
@@ -37,10 +37,25 @@ return {
 
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
 					local opts = { buffer = ev.buf }
-					vim.keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, {buffer = ev.buf, desc = "see declaration"})
-					vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, {buffer = ev.buf, desc = "see definition"})
-					vim.keymap.set("n", "<leader>lK", vim.lsp.buf.hover, {buffer = ev.buf, desc = "hover action"})
-					vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, {buffer = ev.buf, desc = "see implementation"})
+					vim.keymap.set(
+						"n",
+						"<leader>lD",
+						vim.lsp.buf.declaration,
+						{ buffer = ev.buf, desc = "see declaration" }
+					)
+					vim.keymap.set(
+						"n",
+						"<leader>ld",
+						vim.lsp.buf.definition,
+						{ buffer = ev.buf, desc = "see definition" }
+					)
+					vim.keymap.set("n", "<leader>lK", vim.lsp.buf.hover, { buffer = ev.buf, desc = "hover action" })
+					vim.keymap.set(
+						"n",
+						"<leader>li",
+						vim.lsp.buf.implementation,
+						{ buffer = ev.buf, desc = "see implementation" }
+					)
 
 					-- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts) -- collides with window changing
 					-- vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
@@ -48,10 +63,20 @@ return {
 					-- vim.keymap.set("n", "<space>wl", function()
 					-- 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 					-- end, opts)
-					vim.keymap.set("n", "<leader>lt", vim.lsp.buf.type_definition, {buffer = ev.buf, desc = "type definition"})
-					vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, {buffer = ev.buf, desc = "rename symbol"})
-					vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, {buffer = ev.buf, desc = "code action"})
-					vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, {buffer = ev.buf, desc = "references"})
+					vim.keymap.set(
+						"n",
+						"<leader>lt",
+						vim.lsp.buf.type_definition,
+						{ buffer = ev.buf, desc = "type definition" }
+					)
+					vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, { buffer = ev.buf, desc = "rename symbol" })
+					vim.keymap.set(
+						"n",
+						"<leader>la",
+						vim.lsp.buf.code_action,
+						{ buffer = ev.buf, desc = "code action" }
+					)
+					vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, { buffer = ev.buf, desc = "references" })
 				end,
 			})
 

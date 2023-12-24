@@ -8,33 +8,41 @@ return {
 			local rt = require("rust-tools")
 
 			-- Cargo related commands
-			vim.keymap.set("n", "<leader>C", " ", { desc = "Cargo" })
+			-- vim.keymap.set("n", "<leader>C", " ", { desc = "Cargo" })
 
-			vim.keymap.set("n", "<leader>Cr", "<cmd>Cargo run<CR>",
-				{
-					noremap = true,
-					silent = true,
-					desc = "Cargo run"
-				})
+			vim.keymap.set("n", "<leader>Cr", "<cmd>Cargo run<CR>", {
+				noremap = true,
+				silent = true,
+				desc = "Cargo run",
+			})
 
-			vim.keymap.set("n", "<leader>Cb", "<cmd>Cargo build<CR>",
-				{
-					noremap = true,
-					silent = true,
-					desc = "Cargo build"
-				})
+			vim.keymap.set("n", "<leader>Cb", "<cmd>Cargo build<CR>", {
+				noremap = true,
+				silent = true,
+				desc = "Cargo build",
+			})
 
 			rt.setup({
 				server = {
 					on_attach = function(_, bufnr)
 						-- Hover actions
-						vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr, desc = "Rust tools hover"})
+						vim.keymap.set(
+							"n",
+							"<C-space>",
+							rt.hover_actions.hover_actions,
+							{ buffer = bufnr, desc = "Rust tools hover" }
+						)
 						-- Code action groups
-						vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr, desc = "Rust tools group action" })
+						vim.keymap.set(
+							"n",
+							"<Leader>a",
+							rt.code_action_group.code_action_group,
+							{ buffer = bufnr, desc = "Rust tools group action" }
+						)
 					end,
 				},
 			})
-		end
+		end,
 	},
 
 	{
@@ -44,13 +52,7 @@ return {
 
 		config = function()
 			-- Set rust exclusive fmt since fmt is downloaded externally instead of through Mason
-			vim.keymap.set("n", "<leader>F", "<cmd>RustFmt<CR>",
-				{
-					noremap = true,
-					silent = true,
-					desc = "Format code"
-				})
-		end
+		end,
 	},
 	-- {
 	-- 	'saecki/crates.nvim',
