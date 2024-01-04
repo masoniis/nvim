@@ -7,6 +7,14 @@ if vim.g.vscode then
 
 	-- Import lazy config and bootstrap and stuff
 	require("vscode.config.lazy")
+elseif vim.g.started_by_firenvim then -- For web browser sessions (firenvim)
+	-- Load keymaps, options, and autocmds
+	require("firenvim.config.autocmds")
+	require("firenvim.config.keymaps")
+	require("firenvim.config.fireopts")
+
+	-- Import lazy config and bootstrap and stuff
+	require("firenvim.config.lazy")
 else
 	-- Load keymaps, options, and autocmds
 	require("default.config.autocmds")
