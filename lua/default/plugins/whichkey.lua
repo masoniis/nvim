@@ -27,7 +27,7 @@ return {
 			b = { name = "buffer" },
 			c = { name = "change" },
 			f = { name = "file" },
-			l = { name = "lsp" },
+			l = { name = "lsp", { l = "which_key_ignore" } }, -- Need an empty bind to get title to work for some reason
 		}, { prefix = "<leader>" })
 
 		-- Add rust cargo when in rust

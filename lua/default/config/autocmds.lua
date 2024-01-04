@@ -17,7 +17,7 @@ api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 api.nvim_create_autocmd("TermOpen", { command = [[startinsert]] })
 api.nvim_create_autocmd("TermOpen", { command = [[setlocal nonumber norelativenumber]] }) --- Remove line numbers in a terminal
 -- api.nvim_create_autocmd("TermOpen", { command = [[set ma]] }) --- SOMEWHAT DANGEROUS: sets terminal buffers to modifable to take use of vim -a vi
-api.nvim_create_autocmd("BufEnter,WinEnter", { pattern = { "term://*" }, command = "startinsert", nested = true }) -- Inter insert mode on window temrinal focus
+-- api.nvim_create_autocmd("BufEnter,WinEnter", { pattern = { "term://*" }, command = "startinsert", nested = true }) -- Inter insert mode on window temrinal focus
 
 -- When entering command mode, set height to 1 in order to shift statusline up so it remains visible
 api.nvim_create_autocmd("CmdlineEnter", {
@@ -33,23 +33,23 @@ api.nvim_create_autocmd("CmdlineLeave", {
 local cl_var = "auto_cursorline"
 
 vim.api.nvim_create_autocmd({ "WinEnter", "FocusGained" }, {
-  group = vim.api.nvim_create_augroup("enable_auto_cursorline", { clear = true }),
-  callback = function()
-    local ok, cl = pcall(vim.api.nvim_win_get_var, 0, cl_var)
-    if ok and cl then
-      vim.api.nvim_win_del_var(0, cl_var)
-      vim.o.cursorline = true
-    end
-  end,
+	group = vim.api.nvim_create_augroup("enable_auto_cursorline", { clear = true }),
+	callback = function()
+		local ok, cl = pcall(vim.api.nvim_win_get_var, 0, cl_var)
+		if ok and cl then
+			vim.api.nvim_win_del_var(0, cl_var)
+			vim.o.cursorline = true
+		end
+	end,
 })
 
 vim.api.nvim_create_autocmd({ "WinLeave", "FocusLost" }, {
-  group = vim.api.nvim_create_augroup("disable_auto_cursorline", { clear = true }),
-  callback = function()
-    local cl = vim.o.cursorline
-    if cl then
-      vim.api.nvim_win_set_var(0, cl_var, cl)
-      vim.o.cursorline = false
-    end
-  end,
+	group = vim.api.nvim_create_augroup("disable_auto_cursorline", { clear = true }),
+	callback = function()
+		local cl = vim.o.cursorline
+		if cl then
+			vim.api.nvim_win_set_var(0, cl_var, cl)
+			vim.o.cursorline = false
+		end
+	end,
 })

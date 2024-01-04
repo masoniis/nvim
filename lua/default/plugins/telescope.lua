@@ -6,7 +6,6 @@ return {
 		if not status_ok then
 			vim.notify("Telescope failed to initialize.")
 			return
-
 		end
 
 		-- Extension for project.nvim
@@ -16,9 +15,13 @@ return {
 	end,
 	cmd = "Telescope", -- lazy load on any telescope cmd
 	keys = {
-		{"<leader>f", "", desc = "file cmds"}, -- Used so whichkey will name the category
-		{"<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Search pwd files" },
-		{"<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Search live grep" },
-		{"<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Search recent files" }
-	}
+		{ "<leader>f", "", desc = "file cmds" }, -- Used so whichkey will name the category
+		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "search pwd files" },
+		{ "<leader>d", "<cmd>Telescope diagnostics<cr>", desc = "lsp diagnostics" },
+		{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "search live grep" },
+		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "search recent files" },
+		{ "<leader>p", "<cmd>Telescope commands<cr>", desc = "search commands" },
+		{ "<C-p>", ":lua require'telescope.builtin'.git_files{use_git_root=false}<CR>", desc = "search git repo" },
+		{ "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find <CR>", "current buffer fuzzy find" },
+	},
 }

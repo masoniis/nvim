@@ -7,7 +7,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	init = function()
 		vim.g.barbar_auto_setup = false
-		vim.keymap.set("n", "<leader>bc", "<cmd>BufferClose<cr>", { desc = "close buffer" })
+		vim.keymap.set("n", "<leader>bc", "<cmd>BufferClose!<cr>", { desc = "close buffer" })
 		vim.keymap.set("n", "<leader>bp", "<cmd>BufferPrevious<cr>", { desc = "previous buffer" })
 		vim.keymap.set("n", "<leader>bn", "<cmd>BufferNext<cr>", { desc = "next buffer" })
 	end,

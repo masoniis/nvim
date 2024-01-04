@@ -1,8 +1,9 @@
 return {
 	{
 		"simrat39/rust-tools.nvim",
+		lazy = false, -- Live grep highlighting error if not loaded
 
-		event = "FileType rust",
+		-- event = "FileType rust",
 
 		config = function()
 			local rt = require("rust-tools")
