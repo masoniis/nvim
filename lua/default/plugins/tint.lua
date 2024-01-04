@@ -15,7 +15,8 @@ return {
 				local floating = vim.api.nvim_win_get_config(winid).relative ~= ""
 
 				-- Do not tint `terminal` or floating windows, tint everything else
-				return buftype == "terminal" or floating
+				-- return buftype == "terminal" or floating
+				return buftype == floating
 			end,
 		})
 	end,
