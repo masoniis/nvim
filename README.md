@@ -1,5 +1,3 @@
 # nvim
 
-nvim config
-
-nvim config made for vscode nvim extension
+nvim config that allows neovim inside vscode, terminal, and web
